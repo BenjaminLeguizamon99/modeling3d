@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+    "nav nav nav"
+    "main main main"
+    "footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    background-color: #121820;
+    }
+    nav {
+        grid-area: nav;
+    }
+    main {
+        grid-area: main;
+    }
+    footer {
+        grid-area: footer;
+    }
+    /* con esto definimos las secciones de la pagina con grid */
+    /*Ahora le damos estilo a la barra de navegacion*/
+    nav {
+        background-color: #121820;
+    }
+    .list-items-nav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .list-items-nav li {
+        list-style: none;
+        margin: 10px;
+    }
+    .list-items-nav li a {
+        text-decoration: none;
+        color: #d7d9ce;
+    }
+    /*Le damos estilo al footer*/
+    footer {
+        background-color: #121820;
+    }
+    .list-items-footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .list-items-footer li {
+        list-style: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .list-items-footer li a {
+        text-decoration: none;
+        color: #d7d9ce;
+        margin-bottom: 10px;
+    }
+    /* Le damos estilo al index.html*/
+    .img-fondo-home {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../imagenes/living.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 90vh;
+    }
+    .home-flex-container { /*Hice esto para que el boton se ponga abajo del texto*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-titulo {
+        text-transform: uppercase;
+        width: 60%;
+        color: #d7d9ce;
+    }
+    .boton a{
+        text-decoration: none;
+        color: #d7d9ce;
+        font-size: 1em;
+    }
+    .boton {
+        background-color: #0c7489;
+        padding: .8em;
+        border-radius: 1em;
+    }
+    /*Le doy estilo al html sobre mi*/
+    
+    .sobre-mi-flex-container { /*Lo hago en flex para poner la imagen arriba del texto, pero despues en desktop se va a colocar el texto al lado de la imagen*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .titulo-principal {
+        text-transform: uppercase;
+        color: #d7d9ce;
+        display: flex;
+        justify-content: center;
+        margin-top: .5em;
+    }
+    .sobre-mi-foto {
+        width: 85%;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+    .sobre-mi-texto {
+        width: 90%;
+        font-size: 1em;
+        line-height: 1em;
+        color: #d7d9ce;
+        padding: .5em 1em .5em 1em;
+    }
+    .sobre-mi-subtitulo { /*Esta clase es para el h2*/
+        color: #d7d9ce;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+    }
+    .sobre-mi-sub-titulo { /*Esta clase es para los list items*/
+        color:#d7d9ce;
+        text-decoration: underline;
+        padding-left: 1em;
+        text-transform: uppercase;
+    }
+    /*Le doy estilo al html Servicios*/
+    .servicios-flex-container { /*Lo hago en flex para poner el video abajo del texto, pero despues en desktop se va a colocar el texto al lado del video*/
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .servicios-texto {
+        color: #d7d9ce;
+        font-size: 1em;
+        line-height: 1.5em;
+        width: 90%;
+        padding: .5em 1em .5em 1em;
+    }
+    .servicios-video {
+        width: 90%;
+        padding: .5em 1em .5em 1em;
+    }
+
+    /*Le doy estilo a la galeria*/
+    /*Voy a hacer en grid una columna y 5 filas para que se vea de a una imagen a la vez en mobile*/
+    .galeria-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        row-gap: .5em;
+        justify-items: center;
+    }
+    .galeria-grid img {
+        width: 95%;
+    }
+    /*Le doy estilo al Formulario de contacto*/
+    /*Con grid template areas voy a hacer cuatro filas y dos columnas. La primer fila va a tener una columna para el nombre y otra para el apellido. La fila va a ocupar las dos columnas para el mail, la tercer fila va a ocupar las dos columnas para un text area y la cuarta fila va a ser para el boton*/
+    .contacto-main {
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../imagenes/interiorismo.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .formulario-form {
+        display: flex;
+        align-content: center;
+        /* height: 80vh; */
+        justify-content: center;
+    }
+    .contacto-grid {
+        display: grid;
+        grid-template-areas:
+        "nombre apellido"
+        "mail mail"
+        "mensaje mensaje"
+        "boton boton";
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, auto);
+        row-gap: 1em;
+        column-gap: 1em;
+        margin: .5em;
+        justify-items: center;
+        margin-top: 5px;
+        overflow: auto;
+    }
+    .contacto-nombre {
+        grid-area: nombre;
+    }
+    .contacto-apellido {
+        grid-area: apellido;
+    }
+    .contacto-mail {
+        grid-area: mail;
+    }
+    .contacto-mensaje {
+        grid-area: mensaje;
+    }
+    .contacto-boton {
+        grid-area: boton;
+    }
+    .contacto-input { /*Hago esta clase para darle estilo a los rectangulos de los inputs.*/
+        background: #121820;
+        border-radius: 10px;
+        border: none;
+        padding: 3%;
+    }
+    .contacto-input-boton { /*Creo esta clase ya que la clase contacto-boton la use para establecer el grid area*/
+        padding: .7em;
+        background-color: #121820;
+        color: #d7d9ce;
+        border-style: none;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+    /*Aca termina el diseño mobile*/
+}
+@media screen and (min-width: 480px) and (max-width: 2000px) {
+    .grid-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-areas: 
+    "nav nav nav"
+    "main main main"
+    "footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .5fr 9fr .5fr;
+    background-color: #121820;
+    }
+    nav {
+        grid-area: nav;
+    }
+    main {
+        grid-area: main;
+    }
+    footer {
+        grid-area: footer;
+    } 
+
+    /*Aca defini la estructura basica del sitio*/
+    /*Le doy estilo a la barra de navegacion*/
+    .list-items-nav {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1.2em;
+    }
+    .list-items-nav li a{
+        text-decoration: none;
+        color: #d7d9ce;
+        font-size: 1.3em;
+        padding: .5em;
+    }
+    .list-items-nav li:hover a {
+        border: 2px solid #0c7489;
+        border-radius: 10px;
+    }
+    /*Le doy estilo al main agregandole el background image y centrando el texto*/
+    .img-fondo-home {
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../imagenes/living.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .home-flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.4em;
+    }
+    .home-titulo {
+        text-transform: uppercase;
+        color: #d7d9ce;
+        font-size: 3.5em;
+        font-weight: 300;
+    }
+    .boton a {
+        text-decoration: none;
+        color: #d7d9ce;
+        padding: .5em;
+        font-size: 2em;
+        background-color: #0c7489;
+        border-radius: 15px;
+    }   
+    .boton:hover a,.boton {
+        color: #0c7489;
+        background-color: #d7d9ce;
+        transition: .6s;
+    }
+    .boton:hover {
+        transform: scale(1.1,1.1);
+    }
+
+    /*Le doy estilo al footer*/
+
+    .list-items-footer {
+        display: flex;
+        justify-content: space-around;
+        margin: 1em;
+        list-style: none;
+    }
+    .list-items-footer li a {
+        text-decoration: none;
+        color: #d7d9ce;
+        font-size: 1.3em;
+        padding: .4em;
+    }
+    .list-items-footer li:hover a {
+        border: 2px solid #0c7489;
+        border-radius: 10px;
+    }    
+
+    /*Le doy estilo al Sobre mi*/
+    
+    .titulo-principal {
+        display: flex;
+        justify-content: center;
+        font-size: 2.7em;
+        text-transform: uppercase;
+        color: #d7d9ce;
+        font-weight: 100;
+    }
+    .sobre-mi-flex-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        align-items: center;
+    }
+    .sobre-mi-foto {
+        margin: 20px;
+        width: 40%;
+    }
+    .sobre-mi-texto {
+        font-size: 1.1em;
+        line-height: 1.8em;
+        margin: 1em;
+        color: #d7d9ce;
+    }
+    .sobre-mi-subtitulo { /*Esta clase es para el h2*/
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 2em;
+        color: #d7d9ce;
+        font-weight: 100;
+    }
+    .sobre-mi-sub-titulo { /*Esta clase es para los list-items*/
+        font-size: 1.5em;
+        margin-left: 1.5em;
+        text-decoration: underline;
+        color: #d7d9ce;
+        font-weight: 100;
+    }
+    
+    /*Le doy estilo al html Servicios*/
+
+    .servicios-flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .servicios-video {
+        width: 50%;
+        margin: 1em;
+    }
+    .servicios-texto {
+        width: 40%;
+        margin: 1em;
+        font-size: 1.1em;
+        line-height: 1.8em;
+        color: #d7d9ce;
+    }
+
+    /*Le doy estilo al html galeria*//*Voy a usar grid para hacer una galeria en la que voy a mostrar distintas imagenes en distintos tamaños*/
+    .galeria-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-row: 300px;
+        grid-gap: 10px;
+        margin: 10px;
+    }
+    .galeria-grid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .galeria-grid img:first-child {
+        grid-column: 1 / 3;
+    }
+    .galeria-grid img:nth-child(5) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 4;
+        width: 100%;
+        height: 100%;
+    }
+    .galeria-grid img:nth-child(6) {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+        width: 100%;
+        height: 100%;
+    }
+
+    .galeria-grid img:hover {
+        transform: scale(1.06, 1.06);
+        transition: .6s;
+    }
+
+    /*Le doy estilo al html contacto*/
+
+    .contacto-main {
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../imagenes/interiorismo.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .formulario-form {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 70vh;
+    }
+    .contacto-grid {
+        display: grid;
+        grid-template-areas: 
+        "nombre apellido"
+        "mail mail"
+        "mensaje mensaje"
+        "boton boton";
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        column-gap: 1em;
+        row-gap: 1em;
+
+    }
+    .contacto-nombre {
+        grid-area: nombre;
+    }
+    .contacto-apellido {
+        grid-area: apellido;
+    }
+    .contacto-mail {
+        grid-area: mail;
+    }
+    .contacto-mensaje {
+        grid-area: mensaje;
+    }
+    .contacto-input {
+        background-color: #121820;
+        padding: 15px;
+        border: 1px solid #d7d9ce;
+        border-radius: 15px;
+        margin: 10px;
+        color: #d7d9ce;
+    }
+    .contacto-input-boton {
+        background-color: #0c7489;
+        color: #d7d9ce;
+        width: 200px;
+        border: 1px solid #d7d9ce;
+        padding: 15px;
+        font-size: 1em;
+        border-radius: 15px;
+    }
+    .contacto-input-boton:hover {
+        background-color: #d7d9ce;
+        color: #0c7489;
+        transition: .6s;
+        border: 2px solid #0c7489;
+        transform: scale(1.1, 1.1);
+    }
+
+}
+
+
+
